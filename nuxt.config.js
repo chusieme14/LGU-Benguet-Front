@@ -49,12 +49,39 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
+
+  auth: {
+    redirect: {
+      logout: '/contractor/login',
+      login: '/contractor/login',
+      callback: '/contractor/login',
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'access_token',
+          global: true,
+        },
+        user: {
+          property: '',
+        },
+        tokenType: '',
+        endpoints: {
+          login: { url: 'login', method: 'post' },
+          logout: { url: 'logout', method: 'post' },
+          user: { url: 'user-details', method: 'get' }
+        }
+      }
+    },
+    // plugins: ['@/plugins/auth-lang-redirect.js']
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: process.env.API_URL,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -62,7 +89,7 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
