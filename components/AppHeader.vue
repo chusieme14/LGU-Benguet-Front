@@ -1,17 +1,28 @@
 <template>
-  <v-app-bar :clipped-left="clipped" fixed app>
-    <v-app-bar-nav-icon @click.stop="$emit('drawer')" />
-    <v-btn icon @click.stop="minimize = !minimize">
-      <v-icon>mdi-{{ `chevron-${minimize ? "right" : "left"}` }}</v-icon>
+  <div>
+  <v-toolbar  fixed app height="84px" flat>
+    <div>
+      <v-avatar class="mr-5">
+        <img
+          src="/images/logo.svg"
+        >
+    </v-avatar>
+    </div>
+    <div class="app-title">
+      <span class="text-capitalize country-name">republic of the philippines</span>
+      <h3 class="text-uppercase font-weight-bold city-name">municipality of la trinidad</h3>
+    </div>
+    <v-spacer></v-spacer>
+    <div class="mr-5 app-clock text-right">
+      <span>Philippine Standard Time:</span><br/>
+      <h4>Wednesday, September 14, 2022, 9:35:10 PM</h4>
+    </div>
+    <v-btn depressed color="#ebebeb" class="px-5 text-capitalize">
+      <v-icon left>mdi-account</v-icon>
+      Guest
     </v-btn>
-    <v-btn icon @click.stop="clipped = !clipped">
-      <v-icon>mdi-application</v-icon>
-    </v-btn>
-    <v-btn icon @click.stop="fixed = !fixed">
-      <v-icon>mdi-minus</v-icon>
-    </v-btn>
-    <v-toolbar-title v-text="title" />
-  </v-app-bar>
+  </v-toolbar>
+</div>
 </template>
 <script>
 export default {
@@ -29,3 +40,17 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .app-title {
+    line-height: 1.4rem;
+  }
+
+  .app-title .country-name {
+    font-weight: 500;
+  }
+
+  .app-clock span {
+    font-size: 13px;
+    font-weight: 700;
+  }
+</style>

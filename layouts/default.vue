@@ -1,24 +1,27 @@
 <template>
   <v-app dark>
-    <SideBar :minimize="miniVariant" :drawer="drawer" :clipped="clipped"/>
+    <!-- <SideBar :minimize="miniVariant" :drawer="drawer" :clipped="clipped"/> -->
     <AppHeader :minimize="miniVariant" @drawer="drawerMet" :clipped="clipped"/>
+    <app-menu></app-menu>
     <v-main>
-      <v-container>
         <Nuxt />
-      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
+  import appMenu from '~/components/layout/AppMenu.vue'
 export default {
+  components:{
+    appMenu
+  },
   name: 'DefaultLayout',
   data () {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
-      miniVariant: false,
+      miniVariant: true,
       title: 'Vuetify.js'
     }
   },
