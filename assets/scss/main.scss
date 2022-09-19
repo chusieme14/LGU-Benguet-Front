@@ -1,3 +1,211 @@
 .main-margin {
-    margin: 0px 100px;
+    margin: 0px 15%;
+}
+
+// landing page
+.projects-count {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+}
+.projects-count h3{
+  position: relative;
+}
+// .projects-count h3::before{
+//   content: url("~@/static/images/file-storage.png");;
+//   position: absolute;
+//   left: -15%;
+//   top: -20px;
+// }
+
+.landing-logo{
+  margin-bottom: 5rem !important;
+}
+
+.project-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+
+  .project-item {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+  }
+}
+
+.project-item .folder-photo {
+  width: 60px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.project-content {
+  width: calc(100% - 95px);
+
+  h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    text-transform: uppercase;
+    width: 80%;
+  }
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 10px;
+
+  h4 {
+    width:76px;
+    line-height: 1.3;
+  }
+}
+
+.project-price {
+  display: flex;
+
+  small {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #BABABA;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+}
+
+.objectives ol li {
+  margin: 8px 0;
+}
+
+.objective-logos{
+  margin-top: 40px;
+  display:flex;
+  gap:50px;
+  justify-content:center;
+  align-items: center;
+  img{
+    width:175px;
+  }
+}
+
+.building-permit-forms {
+  background: #F6F6F6;
+  padding: 50px 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom:15px;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+
+.building-permit-forms  .file-wrapper {
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3.5%;
+  margin-top: 50px;
+}
+
+.building-permit-forms .file-content {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.building-permit-forms .file-item {
+  width: 31%;
+  border: 1px solid #D8D8D8;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 40px;
+}
+
+.building-permit-forms .file-content .file-icon {
+  width: 60px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.building-permit-forms .file-content .file-name {
+
+  h4 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #ACACAC;
+  }
+  small {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #ACACAC;
+  }
+}
+
+
+// Footer
+.app-footer {
+  padding: 70px 0 0;
+}
+
+.app-footer .web-logo {
+  text-align: center;
+  margin-bottom: 80px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 10px 0;
+  }
+
+  h5 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+  }
+}
+
+.app-footer .web-footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 1.3%;
+  margin-bottom: 80px;
+
+  li {
+    list-style: none;
+    width: 24%;
+    margin: 5px 0;
+    cursor: pointer;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #000000;
+  }
 }

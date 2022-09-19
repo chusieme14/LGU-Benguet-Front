@@ -1,6 +1,6 @@
 <template>
   <div>
-  <v-toolbar  fixed app height="84px" flat>
+  <v-toolbar  fixed app height="84px" class="mx-8" flat>
     <div>
       <v-avatar class="mr-5">
         <img

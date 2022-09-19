@@ -6,14 +6,17 @@
     <v-main>
         <Nuxt />
     </v-main>
+    <app-footer></app-footer>
   </v-app>
 </template>
 
 <script>
   import appMenu from '~/components/layout/AppMenu.vue'
+  import appFooter from '~/components/layout/AppFooter.vue'
 export default {
   components:{
-    appMenu
+    appMenu,
+    appFooter
   },
   name: 'DefaultLayout',
   data () {
