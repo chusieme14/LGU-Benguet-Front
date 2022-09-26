@@ -120,11 +120,7 @@
       </v-container>
     </div>
     <div class=" main-margin landing-logo text-center ">
-      <v-img
-        contain
-        height="180"
-        src="/images/logo.svg"
-      />
+      <img src="/images/logo.svg" alt="logo" />
       <div class="my-2">
         <h2>La Trinidad, Benguet</h2>
       </div>
@@ -133,18 +129,15 @@
 
     <div class="main-margin">
       <v-container>
-        <div style="display:flex; justify-content:space-between; padding: 50px 0;" class="objectives">
-          <div style="width:48%;">
+        <div class="objectives">
+          <div>
             <h2>Functional Statement</h2>
-            <div
-              style="font-size: 18px;"
-              class="mt-4"
-            >
-              <div>
+            <div class="mt-4 index-text">
+              <div class="normal-text">
                 The Municipal Engineering Office is primarily responsible in the administration and implementation of infrastructure development and public works project of the Local Government Unit.
 
               </div>
-              <div class="mt-4" >
+              <div class="mt-4 normal-text index-text" >
                 The Municipal Engineer is also mandated to act as the Local Building Official. As such, he shall be responsible in the enforcement of the provisions of the National Building Code (PD 1096) and its IRR, such as, but not limited to the administrative control and/ or supervision of all activities relating to the processing & issuance of Building Permits and Certificates of Occupancy covering the construction, addition, repair, renovation and/or demolition of buildings/structures within the locality.
               </div>
               <div class="objective-logos" style="">
@@ -158,12 +151,9 @@
               </div>
             </div>
           </div>
-          <div style="width:48%;">
+          <div>
             <h2>Objectives</h2>
-            <div
-            style="font-size: 18px;"
-              class="mt-4"
-            >
+            <div class="mt-4 index-text">
             <ol>
               <li>To initiate, review and recommend changes in policies and objectives, plans and programs, techniques, procedures and practices in infrastructure development and public works in general of the local government unit;</li>
               <li>Advise the Mayor in infrastructure, public works and other engineering matters;</li>
@@ -267,13 +257,13 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .benguit-image {
   /* background-color: red; */
   width: 100%;
   height: 90vh;
   background-image: url("~@/static/images/hero-img.jpg");
-  background-size: 100%;
+  background-size: cover;
   position: relative;
   text-align: center;
   color: white;
@@ -284,5 +274,23 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.description {
+  h1 {
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
+  }
+  h2 {
+    @media (max-width: 600px) {
+      font-size: 22px;
+    }
+  }
+  h4 {
+    @media (max-width: 600px) {
+      font-size: 15px;
+    }
+  }
 }
 </style>
