@@ -6,7 +6,7 @@
         <img
           src="/images/logo.svg"
         >
-    </v-avatar>
+      </v-avatar>
     </div>
     <div class="app-title">
       <span class="text-capitalize country-name">republic of the philippines</span>
