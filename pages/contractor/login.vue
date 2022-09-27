@@ -2,7 +2,7 @@
   <v-container class="login-main-container" fluid>
     <div class="inner-container">
       <div class="image hidden-xs-only">
-        <v-img src="/images/login.svg"/>
+        <v-img src="/images/login-hero-img.jpg"/>
       </div>
       <div class="login-form">
         <div>
