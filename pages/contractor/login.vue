@@ -1,11 +1,16 @@
 <template>
   <v-container class="login-main-container" fluid>
     <div class="inner-container">
-      <div class="image hidden-xs-only">
-        <v-img src="/images/login-hero-img.jpg"/>
+      <div class="image hidden-xs-only authentication-img">
+        <div class="authentication-img-content">
+          <img src="/images/logo.png" alt="">
+          <h2>La Trinidad, Benguet</h2>
+          <p>The Strawberry and Rose Capital of the Philippines</p>
+        </div>
       </div>
       <div class="login-form">
         <div>
+          <img src="/images/logo.png" alt="">
           <h2>La Trinidad, Benguet</h2>
           <p>The Strawberry and Rose Capital of the Philippines</p>
           <v-form
@@ -83,6 +88,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.container.login-main-container {
+  padding: 0;
+}
+
+form button.v-btn {
+  background: #EBEE00 !important;
+  color: #000;
+}
   .v-btn:before {
     opacity: 0 !important;
   }
@@ -99,7 +112,10 @@ export default {
 
     .inner-container{
       display: flex;
-      width: 70%;
+      width: 100%;
+      max-width: 1920px;
+      height: 100vh;
+      max-height: 1117px;
       border: 1px solid #b6c4db;
       background-color: white;
 
