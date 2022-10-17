@@ -262,7 +262,7 @@ export default {
   /* background-color: red; */
   width: 100%;
   height: 90vh;
-  background-image: url("~@/static/images/hero-img.jpg");
+  background-image: url("~@/static/images/index-banner.jpg");
   background-size: cover;
   position: relative;
   text-align: center;
