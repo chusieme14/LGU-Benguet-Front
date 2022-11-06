@@ -16,6 +16,32 @@
     }
 }
 
+.csr {
+  cursor: pointer;
+  transition: 0.4s;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.solid-transparent {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+  height: 55px;
+  color: #FFFFFF;
+  padding: 0 30px;
+}
+
+.btn-yellow {
+  background: #EBEE00;
+  border: 1px solid #EBEE00;
+  border-radius: 6px;
+  height: 55px;
+  color: #000000;
+  padding: 0 30px;
+}
+
 // header 
 .app-title {
   @media (max-width: 991px) {
@@ -159,6 +185,14 @@
   @media (max-width: 450px) {
     font-size: 15px;
   }
+}
+
+.banner-btns {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .projects-count {
@@ -372,6 +406,84 @@
   }
 }
 
+.contact-us {
+  background-color: #EBEE00;
+  padding: 50px 0;
+  .contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .contact-form {
+      width: 47%;
+      background-color: #FFFFFF;
+      border-radius: 6px;
+      padding: 30px;
+
+      h4 {
+        font-size: 20px;
+        color: #000000;
+        margin-bottom: 20px;
+      }
+    }
+
+    .contact-details {
+      width: 47%;
+      h3 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #000000;
+      }
+      h4 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 50px;
+      }
+      span {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.contact-us form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+
+  .input-type {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    &.full-w {
+      width: 100%;
+    }
+
+    label {
+      font-size: 14px;
+      color: #000000;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+    input {
+      height: 50px;
+      border: 1px solid #CACACA;
+      border-radius: 6px;
+      padding: 0 10px;
+    }
+    textarea {
+      height: 99px;
+      border: 1px solid #CACACA;
+      border-radius: 6px;
+      padding: 7px 10px;
+    } 
+  }
+}
 
 .building-permit-forms  .file-wrapper {
   display:flex;
