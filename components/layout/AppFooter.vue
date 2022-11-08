@@ -1,5 +1,55 @@
 <template>
   <div class="app-footer">
+    <section class="contact-us">
+      <div class="main-margin">
+        <div class="container">
+          <div class="contact-wrapper">
+            <div class="contact-form">
+              <h4>Send us a Message</h4>
+              <form>
+                <div class="input-type">
+                  <label for="">Full Name</label>
+                  <input type="" name="" value="" placeholder="Your Full Name">
+                </div>
+                <div class="input-type">
+                  <label for="">Email</label>
+                  <input type="" name="" value="" placeholder="Your email ">
+                </div>
+                <div class="input-type">
+                  <label for="">Phone Number</label>
+                  <input type="" name="" value="" placeholder="+63">
+                </div>
+                <div class="input-type full-w">
+                  <label for="">Message</label>
+                  <textarea rows="" cols="" placeholder="You Message"></textarea>
+                </div>
+                <button typpe="submit">SEND</button>
+              </form>
+            </div>
+            <div class="contact-details">
+              <h3>Contact Us</h3>
+              <h4>Lets us know about your concerns.</h4>
+              <span>
+                <i></i>
+                Municipality OF La Trinidad, Benguet
+              </span>
+              <span>
+                <i></i>
+                +63 976 131 8546
+              </span>
+              <span>
+                <i></i>
+                MEO.latrinidabenguet@gmail.com
+              </span>
+              <span>
+                <i></i>
+                La Trindad Benguet
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="main-margin">
       <v-container>
         <div class="web-logo">
