@@ -18,6 +18,28 @@
             v-model="valid"
             lazy-validation
           >
+            <label for="">First Name</label>
+            <v-text-field
+              v-model="payload.fname"
+              :rules="[!!payload.fname || 'First Name is required']"
+              placeholder="Your First Name"
+              required
+              outlined
+              dense
+              hide-details="auto"
+              class="mb-2"
+            ></v-text-field>
+            <label for="">Last Name</label>
+            <v-text-field
+              v-model="payload.lname"
+              :rules="[!!payload.lname || 'Last Name is required']"
+              placeholder="Your Last Name"
+              required
+              outlined
+              dense
+              hide-details="auto"
+              class="mb-2"
+            ></v-text-field>
             <label for="">Email</label>
             <v-text-field
               v-model="payload.email"

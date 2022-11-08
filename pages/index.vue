@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="index-page">
     <div class="benguit-image">
       <div class="description">
         <div class="mb-6">
@@ -9,6 +9,10 @@
           <h2>La Trinidad, Benguet</h2>
         </div>
         <h4>The Strawberry and Rose Capital of the Philippines</h4>
+        <div class="banner-btns">
+          <button class="solid-transparent csr" type="">Building Permit Forms</button>
+          <button class="btn-yellow csr">Browse projects</button>
+        </div>
       </div>
     </div>
     <div class="main-margin projects-count">
@@ -119,6 +123,22 @@
         </div>
       </v-container>
     </div>
+
+    <div class="browse-table">
+    <section class="table-wrapper">
+      <h3 text-align="center">Approved Projects</h3>
+      <template>
+        <v-card>
+          <v-data-table
+          :headers="headers"
+          :items="projects"
+          :search="search"
+          ></v-data-table>
+        </v-card>
+      </template>
+    </section>
+    </div>
+
     <div class=" main-margin landing-logo text-center ">
       <img src="/images/logo.svg" alt="logo" />
       <div class="my-2">
@@ -210,6 +230,8 @@
       </div>
     </section>
 
+    
+
   </div>
 </template>
 <script>
@@ -253,6 +275,112 @@ export default {
           file_size:'574 KB'
         },
         ],
+      headers: [
+        {
+          text: 'PROJECT NAME',
+          align: 'start',
+          sortable: true,
+          value: 'proj_name',
+        },
+        { text: 'PROJECT TYPE', value: 'proj_type' },
+        { text: 'LOCATION', value: 'proj_location' },
+        { text: 'FUND SOURCE', value: 'proj_fund_src' },
+        { text: 'APPROPRIATION', value: 'proj_app' },
+        { text: 'TOTAL DAYS TO COMPLETE', value: 'proj_total_days' },
+        { text: 'CONTRACTOR', value: 'proj_contr' },
+      ],
+      projects: [
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+        {
+          proj_name: 'Road opening/improvement at pipingew II (Near Patinglad Res.)',
+          proj_type: 'Road',
+          proj_location: 'Lubas, La Trinidad, Benguet',
+          proj_fund_src: '20% MDF, FY2022',
+          proj_app: 'P 1,000,000.00',
+          proj_total_days: '100 Days',
+          proj_contr: '100 Days',
+        },
+      ],
     }
   }
 }
