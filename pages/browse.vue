@@ -55,7 +55,7 @@ export default {
         { text: 'FUND SOURCE', value: 'fund_source' },
         { text: 'APPROPRIATION', value: 'appropriation' },
         { text: 'TOTAL DAYS TO COMPLETE', value: 'mandays' },
-        { text: 'CONTRACTOR', value: 'proj_contr' },
+        // { text: 'CONTRACTOR', value: 'proj_contr' },
       ],
       projects: [],
 
