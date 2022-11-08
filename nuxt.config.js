@@ -1,11 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  target: "server",
-  server: {
-    port: 9090,
-    host: "0.0.0.0", // default: 3000,
-  },
+  target:"static",
+
+  // target: "server",
+  // server: {
+  //   port: 9090,
+  //   host: "0.0.0.0", // default: 3000,
+  // },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - LGU-Benguet-front',
@@ -23,6 +25,10 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap' }
     ]
+  },
+  env: {
+    baseUrl: process.env.API_URL,
+    credentials: true,
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -81,6 +87,7 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: process.env.API_URL,
+    credentials: true,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
