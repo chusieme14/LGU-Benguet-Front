@@ -6,6 +6,8 @@
                     <v-card-title>
                     projects for implementation
                     <v-spacer></v-spacer>
+                    <v-spacer></v-spacer>
+                    <v-spacer></v-spacer>
                     <v-text-field
                         v-model="search"
                         append-icon="mdi-magnify"
@@ -13,7 +15,6 @@
                         single-line
                         hide-details
                     ></v-text-field>
-                    <v-spacer></v-spacer>
                     <button class="table-filter" type="">
                         <v-icon dark>
                             mdi-account
