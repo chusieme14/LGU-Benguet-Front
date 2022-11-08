@@ -1,11 +1,10 @@
 <template>
     <div class="app-menu-container">
-        <v-btn depressed class="menu">Browse</v-btn>
+        <v-btn depressed class="menu" @click="goTo('browse')">Browse</v-btn>
         <v-btn depressed class="menu">Citizen’s Charter</v-btn>
         <v-btn depressed class="menu">Organizational Chart</v-btn>
         <v-btn depressed class="menu">Building Permit Forms</v-btn>
         <div style="width:150px ;">
-
             <v-text-field
                 solo
                 filled
