@@ -1,14 +1,14 @@
 <template>
   <div>
   <v-toolbar  fixed app height="84px" class="mx-8" flat>
-    <div>
+    <div @click="goTo('index')">
       <v-avatar class="mr-5">
         <img
           src="/images/logo.svg"
         >
       </v-avatar>
     </div>
-    <div class="app-title">
+    <div class="app-title" @click="goTo('index')">
       <span class="text-capitalize country-name">republic of the philippines</span>
       <h3 class="text-uppercase font-weight-bold city-name">municipality of la trinidad</h3>
     </div>
