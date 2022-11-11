@@ -15,7 +15,7 @@
     <v-spacer></v-spacer>
     <div class="mr-5 app-clock text-right">
       <span>Philippine Standard Time:</span><br/>
-      <h4>Wednesday, September 14, 2022, 9:35:10 PM</h4>
+      <h4>{{clock}}</h4>
     </div>
     <v-btn depressed color="#ebebeb" class="px-5 text-capitalize">
       <v-icon left>mdi-account</v-icon>
@@ -34,7 +34,17 @@ export default {
     return{
       title:'LGU Benguet',
       fixed:false,
+      clock:''
     }
+  },
+  methods:{
+    updateCurrentTime() {
+      this.clock = this.$moment().format("dddd, MMMM Do, YYYY, LTS");
+    },
+  },
+  created() {
+    this.clock = this.$moment().format("dddd, MMMM Do, YYYY, LTS");
+    setInterval(() => this.updateCurrentTime(), 1 * 1000);
   },
   watch:{
   }

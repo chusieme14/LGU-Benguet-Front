@@ -46,6 +46,10 @@ export default {
   data(){
     return {
       menus:[
+      {
+          name: 'Home',
+          route: 'index'
+        },
         {
           name: 'Browse',
           route: 'browse'
