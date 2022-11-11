@@ -17,7 +17,8 @@
 }
 
 .app-menu-container {
-  padding: 0 30px !important;
+  padding: 0 !important;
+  background-color: #F6F6F6;
 
   button {
     height: 100% !important;
@@ -26,6 +27,25 @@
     }
   }
 }
+.app-menu-container .v-slide-group__content .v-tab {
+  color: #000000 !important;
+  background-color: #F6F6F6 !important;
+}
+.app-menu-container .v-item-group {
+  background-color: #F6F6F6 !important;
+}
+.app-menu-container .v-input__slot {
+  background: transparent !important;
+}
+.app-menu-container .v-slide-group__content .v-tab--active {
+  background-color: #EBEE00 !important;
+}
+
+.app-menu-container .v-tabs-slider-wrapper {
+  display: none !important;
+}
+
+
 
 .csr {
   cursor: pointer;
@@ -53,10 +73,10 @@
   padding: 0 30px;
 }
 
-// header
+// header 
 .app-title {
   @media (max-width: 991px) {
-   display: none;
+   display: none; 
   }
   span {
     @media (max-width: 1024px) {
@@ -69,7 +89,6 @@
     }
   }
 }
-
 
 // authentication
 .authentication-img {
@@ -190,7 +209,7 @@
 }
 
 
-// landing page /
+// landing page / 
 .index-text {
   font-size: 18px;
   @media (max-width: 450px) {
@@ -419,6 +438,10 @@
 
 .contact-us {
   background-color: #EBEE00;
+  background-image: url('/images/logo-opacity.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   padding: 0;
   margin-bottom: 70px;
   .contact-wrapper {
@@ -497,7 +520,7 @@
       border: 1px solid #CACACA;
       border-radius: 6px;
       padding: 7px 10px;
-    }
+    } 
   }
 
   button {
@@ -558,6 +581,14 @@
   }
 }
 
+.building-permit-forms .file-item a {
+  display: block;
+  height: max-content;
+  width: max-content;
+  color: #000;
+  text-decoration: none;
+}
+
 .building-permit-forms .file-content .file-icon {
   width: 60px;
   @media (max-width: 1200px) {
@@ -583,7 +614,7 @@
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
-      overflow: hidden;
+      overflow: hidden;    
     }
   }
   small {
@@ -720,9 +751,32 @@
   }
 }
 
+.browse-table .v-sheet {
+  background: transparent !important;
+  height: auto !important;
+  margin-bottom: 15px !important; 
+  .v-toolbar__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+  }
+  button.v-btn {
+    background: #F6F6F6 !important;
+    width: 140px;
+    height: 50px !important;
+    border-radius: 6px;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+  .v-input__slot {
+    background: transparent !important;
+  }
+}
+
 .browse-table {
   background-color: #EFEFEF;
-  padding: 10px 0;
+  padding: 70px 0;
   .table-wrapper {
     width: 1608px;
     max-width: 90%;
@@ -754,7 +808,7 @@
 }
 
 .browse-table .v-text-field > .v-input__control > .v-input__slot:before {
-  border-style: none !important;
+  border-style: none !important; 
 }
 
 .browse-table .v-text-field .v-label{

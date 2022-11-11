@@ -26,19 +26,19 @@
             {{item.name}}
           </v-tab>
           <v-tab>
-            <div style="width:150px ;">
+            <div style="width:400px ;">
             <v-text-field
                 solo
                 filled
                 hide-details
                 dense
-                 flat
+                flat
                 prepend-inner-icon="mdi-magnify"
-                placeholder="search"
+                placeholder="Search"
             ></v-text-field>
         </div>
       </v-tab>
-      </v-tabs>
+        </v-tabs>
     </div>
 </template>
 <script>

@@ -10,20 +10,22 @@
                     Quisque gravida odio ac mollis sollicitudin.
                     </p>
                     <div class="file-wrapper">
-                    <div class="file-item" v-for="permit in permits" :key="permit.name">
-                        <h3 class="file-title text-uppercase">{{permit.name}}</h3>
-                        <div class="file-content text-uppercase">
-                        <div class="file-icon">
-                            <img src="/images/pdf.png" alt="">
-                        </div>
-                        <div class="file-name">
-                            <h4>{{permit.file_name}}</h4>
-                            <small>
-                            ({{permit.file_size}})
-                            </small>
-                        </div>
-                        </div>
-                    </div>
+                      <div class="file-item" v-for="permit in permits" :key="permit.name">
+                        <a href="">
+                          <h3 class="file-title text-uppercase">{{permit.name}}</h3>
+                          <div class="file-content text-uppercase">
+                          <div class="file-icon">
+                              <img src="/images/pdf.png" alt="">
+                          </div>
+                          <div class="file-name">
+                              <h4>{{permit.file_name}}</h4>
+                              <small>
+                              ({{permit.file_size}})
+                              </small>
+                          </div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                 </div>
                 </v-container>
