@@ -18,61 +18,78 @@
             v-model="valid"
             lazy-validation
           >
-            <label for="">First Name</label>
-            <v-text-field
-              v-model="payload.fname"
-              :rules="[!!payload.fname || 'First Name is required']"
-              placeholder="Your First Name"
-              required
-              outlined
-              dense
-              hide-details="auto"
-              class="mb-2"
-            ></v-text-field>
-            <label for="">Last Name</label>
-            <v-text-field
-              v-model="payload.lname"
-              :rules="[!!payload.lname || 'Last Name is required']"
-              placeholder="Your Last Name"
-              required
-              outlined
-              dense
-              hide-details="auto"
-              class="mb-2"
-            ></v-text-field>
-            <label for="">Email</label>
-            <v-text-field
-              v-model="payload.email"
-              :rules="[!!payload.email || 'Email is required']"
-              placeholder="@mail.com"
-              required
-              outlined
-              dense
-              hide-details="auto"
-              class="mb-2"
-            ></v-text-field>
-            <label for="">Password</label>
-            <v-text-field
-              v-model="payload.passwor"
-              type="password"
-              placeholder="*****"
-              required
-              outlined
-              dense
-              hide-details="auto"
-              class="mb-2"
-            ></v-text-field>
-            <label for="">Repeat Password</label>
-            <v-text-field
-              v-model="payload.password"
-              type="password"
-              placeholder="*****"
-              required
-              outlined
-              dense
-              hide-details="auto"
-              class="mb-2"
-            ></v-text-field>
+            <div class="form-inner-wrapper">
+              <div class="auth-wrap half-w">
+                <label for="">First Name</label>
+                <v-text-field
+                  v-model="payload.fname"
+                  :rules="[!!payload.fname || 'First Name is required']"
+                  placeholder="Your First Name"
+                  required
+                  outlined
+                  dense
+                  hide-details="auto"
+                  class="mb-2"
+                ></v-text-field>
+              </div>
+
+              <div class="auth-wrap half-w">
+                <label for="">Last Name</label>
+                <v-text-field
+                  v-model="payload.lname"
+                  :rules="[!!payload.lname || 'Last Name is required']"
+                  placeholder="Your Last Name"
+                  required
+                  outlined
+                  dense
+                  hide-details="auto"
+                  class="mb-2"
+                ></v-text-field>
+              </div>
+
+              <div class="auth-wrap">
+                <label for="">Email</label>
+                <v-text-field
+                  v-model="payload.email"
+                  :rules="[!!payload.email || 'Email is required']"
+                  placeholder="@mail.com"
+                  required
+                  outlined
+                  dense
+                  hide-details="auto"
+                  class="mb-2"
+                ></v-text-field>
+              </div>
+              
+              <div class="auth-wrap">
+                <label for="">Password</label>
+                <v-text-field
+                  v-model="payload.passwor"
+                  type="password"
+                  placeholder="*****"
+                  required
+                  outlined
+                  dense
+                  hide-details="auto"
+                  class="mb-2"
+                ></v-text-field>
+              </div>
+              
+              <div class="auth-wrap">
+                <label for="">Repeat Password</label>
+                <v-text-field
+                  v-model="payload.password"
+                  type="password"
+                  placeholder="*****"
+                  required
+                  outlined
+                  dense
+                  hide-details="auto"
+                  class="mb-2"
+                ></v-text-field>
+              </div>
+            </div>
+            
             <div class="remember agree">
                 <div>
                   <v-icon  @click="isremember=!isremember" v-if="!isremember">
