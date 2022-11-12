@@ -672,7 +672,7 @@ form button.v-btn {
 
 // Footer
 .app-footer {
-  padding: 70px 0 0;
+  padding: 0;
   @media (max-width: 700px) {
     padding: 30px 0 0;
   }
@@ -943,6 +943,10 @@ form button.v-btn {
   }
 }
 
+.browse-item-page {
+  background-color: #EFEFEF;
+}
+
 .browse-custome-table {
   display: flex;
   flex-wrap: wrap;
@@ -1020,6 +1024,10 @@ form button.v-btn {
   padding-top: 20px;
 }
 
+.table-wrapper .v-data-table__wrapper {
+  height: auto !important;
+}
+
 // summary
 .browse-link-inner-cont {
   table {
@@ -1036,6 +1044,87 @@ form button.v-btn {
         border-bottom: 1px dashed #CACACA;
         height: 40px;
       }
+    }
+  }
+}
+
+.browse-link-inner-cont > h2 {
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000000;
+  width: 540px;
+  margin: 10px 0 30px 0;
+  margin-left: auto;
+  padding: 0 10px;
+
+  span {
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+  }
+}
+
+.sign-valid {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 150px;
+
+  .sign-item {
+    position: relative;
+
+    label {
+      font-weight: 700;
+      font-size: 14px;
+      color: #000000;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 24px;
+      color: #000000;
+      margin-top: 80px;
+    }
+    span {
+      font-weight: 700;
+      font-size: 14px;
+      color: #000000;
+      margin-top: 5px;
+      text-align: center;
+      display: block;
+    }
+    img {
+      position: absolute;
+      right: -50px;
+      top: 0;
+    }
+  }
+}
+
+.program-insight {
+  display: grid;
+  grid-template-areas:
+  'breakdown equipment'
+  'breakdown manpower';
+
+  .item {
+
+    &.breakdown {
+      grid-area: breakdown;
+    }
+    &.equipment {
+      grid-area: equipment;
+    }
+    &.manpower {
+      grid-area: manpower;  
     }
   }
 }
