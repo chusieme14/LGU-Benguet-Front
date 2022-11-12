@@ -17,11 +17,12 @@
         </div> -->
         <v-tabs
           right
+          v-model="tab"
         >
           <v-tab
             v-for="item in menus"
             :key="item.name"
-            @click="goTo(item.route)"
+            @click="redirect(item)"
           >
             {{item.name}}
           </v-tab>
@@ -46,29 +47,54 @@ export default {
   data(){
     return {
       menus:[
-      {
+        {
+          index:0,
           name: 'Home',
           route: 'index'
         },
         {
+          index:1,
           name: 'Browse',
           route: 'browse'
         },
         {
+          index:2,
           name: 'Citizen’s Charter',
           route: 'citizen-charter'
         },
         {
+          index:3,
           name: 'Organizational Chart',
-          route: 'browse'
+          route: 'organizational-chart'
         },
         {
+          index:4,
           name: 'Building Permit Forms',
           route: 'building-permit-forms'
         },
-      ]
+      ],
+      tab:0
     }
-  }
+  },
+  mounted(){
+    this.checkActive()
+  },
+  methods:{
+    checkActive(){
+      let nav = parseInt(localStorage.getItem('nav'))  ||  0
+      console.log(nav,'nav')
+      this.tab = nav
+    },
+    redirect(item){
+      this.goTo(item.route)
+      localStorage.setItem('nav',item.index)
+    }
+  },
+  watch: {
+    $route(to, from) {
+      // this.checkActive()
+    },
+  },
 }
 </script>
 <style scoped>

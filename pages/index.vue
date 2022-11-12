@@ -10,8 +10,8 @@
         </div>
         <h4>The Strawberry and Rose Capital of the Philippines</h4>
         <div class="banner-btns">
-          <button class="solid-transparent csr" type="">Building Permit Forms</button>
-          <button class="btn-yellow csr">Browse projects</button>
+          <button class="solid-transparent csr" type="" @click="goTo('building-permit-forms')">Building Permit Forms</button>
+          <button class="btn-yellow csr" @click="goTo('browse')">Browse projects</button>
         </div>
       </div>
     </div>
@@ -232,7 +232,7 @@
       </div>
     </section>
 
-    
+
 
   </div>
 </template>
