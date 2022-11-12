@@ -1,13 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  target:"static",
+  // target:"static",
 
-  // target: "server",
-  // server: {
-  //   port: 9090,
-  //   host: "0.0.0.0", // default: 3000,
-  // },
+  target: "server",
+  server: {
+    port: 9090,
+    host: "0.0.0.0", // default: 3000,
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - LGU-Benguet-front',

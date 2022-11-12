@@ -51,7 +51,7 @@
                 <p>Forgot Password</p>
             </div>
             <v-btn @click="login" color="primary" width="100%">LOGIN</v-btn>
-            <p class="signup">Don’t have an account? <strong @click="gotoRegister">Signup</strong></p>
+            <p class="signup">Don’t have an account? <strong class="csr" @click="gotoRegister">Signup</strong></p>
           </v-form>
         </div>
       </div>
@@ -88,6 +88,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.v-form .v-input__slot {
+  height: 50px;
+}
+
 .container.login-main-container {
   padding: 0;
 }
@@ -95,6 +99,9 @@ export default {
 form button.v-btn {
   background: #EBEE00 !important;
   color: #000;
+  height: 50px !important;
+  font-weight: 600;
+  font-size: 20px;
 }
   .v-btn:before {
     opacity: 0 !important;
