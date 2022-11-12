@@ -17,7 +17,7 @@
 }
 
 .app-menu-container {
-  padding: 0 !important;
+  padding: 0px !important;
   background-color: #F6F6F6;
 
   button {
@@ -73,10 +73,10 @@
   padding: 0 30px;
 }
 
-// header 
+// header
 .app-title {
   @media (max-width: 991px) {
-   display: none; 
+   display: none;
   }
   span {
     @media (max-width: 1024px) {
@@ -209,7 +209,7 @@
 }
 
 
-// landing page / 
+// landing page /
 .index-text {
   font-size: 18px;
   @media (max-width: 450px) {
@@ -520,7 +520,7 @@
       border: 1px solid #CACACA;
       border-radius: 6px;
       padding: 7px 10px;
-    } 
+    }
   }
 
   button {
@@ -614,7 +614,7 @@
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
-      overflow: hidden;    
+      overflow: hidden;
     }
   }
   small {
@@ -754,7 +754,7 @@
 .browse-table .v-sheet {
   background: transparent !important;
   height: auto !important;
-  margin-bottom: 15px !important; 
+  margin-bottom: 15px !important;
   .v-toolbar__title {
     font-size: 32px;
     font-weight: 700;
@@ -808,7 +808,7 @@
 }
 
 .browse-table .v-text-field > .v-input__control > .v-input__slot:before {
-  border-style: none !important; 
+  border-style: none !important;
 }
 
 .browse-table .v-text-field .v-label{
