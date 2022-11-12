@@ -12,15 +12,17 @@
                         </span>
 
                         <ul>
-                            <li>
-                                <img src="/images/download.png" />
+                          <li>
+                              <a style=" text-decoration: none; color:black;" href="pdf/2020_MEO-Citizens-Charter.pdf" download="">
+                                <img src="/images/download.png"  class="mr-2"/>
                                 2020_MEO-Citizens-Charter
+                              </a>
                             </li>
                         </ul>
                     </div>
                     <div class="right">
                         <div class="right-cont-wrapper">
-                            <iframe src="https://www.africau.edu/images/default/sample.pdf" style="with: 100%; height: 100%; border: none;" >
+                            <iframe src="/pdf/2020_MEO-Citizens-Charter.pdf" style="with: 100%; height: 100%; border: none;" >
                             </iframe>
                         </div>
                     </div>
