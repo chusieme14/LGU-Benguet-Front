@@ -51,7 +51,7 @@ export default {
   data() {
     return {
       setting: {
-        title: "Projects For Implementation",
+        title: "Approved Projects",
         keyword: "",
         loading: false,
         filter: {},
