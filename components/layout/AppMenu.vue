@@ -1,6 +1,6 @@
 <template>
     <div class="app-menu-container">
-        <v-btn depressed class="menu" @click="goTo('browse')">Browse</v-btn>
+        <!-- <v-btn depressed class="menu" @click="goTo('browse')">Browse</v-btn>
         <v-btn depressed class="menu">Citizen’s Charter</v-btn>
         <v-btn depressed class="menu">Organizational Chart</v-btn>
         <v-btn depressed class="menu">Building Permit Forms</v-btn>
@@ -14,9 +14,63 @@
                 prepend-inner-icon="mdi-magnify"
                 placeholder="search"
             ></v-text-field>
+        </div> -->
+        <v-tabs
+          right
+        >
+          <v-tab
+            v-for="item in menus"
+            :key="item.name"
+            @click="goTo(item.route)"
+          >
+            {{item.name}}
+          </v-tab>
+          <v-tab>
+            <div style="width:150px ;">
+            <v-text-field
+                solo
+                filled
+                hide-details
+                dense
+                 flat
+                prepend-inner-icon="mdi-magnify"
+                placeholder="search"
+            ></v-text-field>
         </div>
+      </v-tab>
+      </v-tabs>
     </div>
 </template>
+<script>
+export default {
+  data(){
+    return {
+      menus:[
+      {
+          name: 'Home',
+          route: 'index'
+        },
+        {
+          name: 'Browse',
+          route: 'browse'
+        },
+        {
+          name: 'Citizen’s Charter',
+          route: 'citizen-charter'
+        },
+        {
+          name: 'Organizational Chart',
+          route: 'browse'
+        },
+        {
+          name: 'Building Permit Forms',
+          route: 'building-permit-forms'
+        },
+      ]
+    }
+  }
+}
+</script>
 <style scoped>
 .app-menu-container{
     /* Auto layout */
