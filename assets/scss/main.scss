@@ -53,10 +53,10 @@
   padding: 0 30px;
 }
 
-// header 
+// header
 .app-title {
   @media (max-width: 991px) {
-   display: none; 
+   display: none;
   }
   span {
     @media (max-width: 1024px) {
@@ -190,7 +190,7 @@
 }
 
 
-// landing page / 
+// landing page /
 .index-text {
   font-size: 18px;
   @media (max-width: 450px) {
@@ -497,7 +497,7 @@
       border: 1px solid #CACACA;
       border-radius: 6px;
       padding: 7px 10px;
-    } 
+    }
   }
 
   button {
@@ -583,7 +583,7 @@
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
-      overflow: hidden;    
+      overflow: hidden;
     }
   }
   small {
@@ -722,7 +722,7 @@
 
 .browse-table {
   background-color: #EFEFEF;
-  padding: 70px 0;
+  padding: 10px 0;
   .table-wrapper {
     width: 1608px;
     max-width: 90%;
@@ -754,7 +754,7 @@
 }
 
 .browse-table .v-text-field > .v-input__control > .v-input__slot:before {
-  border-style: none !important; 
+  border-style: none !important;
 }
 
 .browse-table .v-text-field .v-label{
