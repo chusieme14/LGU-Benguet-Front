@@ -1,6 +1,4 @@
 <template>
-  <div class="browse-item-page">
-    <div class="main-margin">
       <section class="browse-main-details">
         <h1>
           Road opening/improvement at pipingew II (Near <br> Patinglad Res.)
@@ -61,7 +59,7 @@
         </div>
       </section>
 
-      <section class="browse-links">
+      <!-- <section class="browse-links">
         <div>
           <div class="browse-inn-wrap">
             <li class="csr">Summary</li>
@@ -74,10 +72,7 @@
           </div>
           <div class="browse-link-cont">
             adad
-            <!-- <Nuxt> -->
           </div>
         </div>
-      </section>
-    </div>
-  </div>
+      </section> -->
 </template>
