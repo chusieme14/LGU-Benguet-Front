@@ -107,10 +107,78 @@
         </table>
       </div>
       <div class="item equipment">
-        asd
+        <h4>
+          Equipment
+        </h4>
+        <table class="custom-table">
+          <tr class="header">
+            <th>Description</th>
+            <th>No. needed</th>
+          </tr>
+          <tr>
+            <td>Backhoe with Breaker (0.80m^3)</td>
+            <td>1 Unit</td>
+          </tr>
+          <tr>
+            <td>One Bagger Mixer</td>
+            <td>1 Unit</td>
+          </tr>
+          <tr>
+            <td>Dumptruck (12yd)</td>
+            <td>1 Unit</td>
+          </tr>
+          <tr>
+            <td>Plate Compactor (5hp)</td>
+            <td>1 Unit</td>
+          </tr>
+          <tr>
+            <td>Bar Cutter</td>
+            <td>1 Unit</td>
+          </tr>
+          <tr>
+            <td>Water Truck</td>
+            <td>1 Unit</td>
+          </tr>
+          <tr>
+            <td>Bar Bender</td>
+            <td>1 Unit</td>
+          </tr>
+        </table>
       </div>
       <div class="item manpower">
-        fg
+        <h4>
+          Manpower
+        </h4>
+        <table class="custom-table">
+          <tr>
+            <td>Civil Engineer</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Const. Foreman</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Mason</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Steelman</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Skilled Laborer</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Carpenter</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Laborer</td>
+            <td>10</td>
+          </tr>
+        </table>
       </div>
     </div>
 

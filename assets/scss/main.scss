@@ -1080,6 +1080,10 @@ table.custom-table {
   }
 }
 
+.browse-link-inner-cont {
+  padding-top: 15px;
+}
+
 .browse-link-inner-cont > h2 {
   font-weight: 700;
   font-size: 24px;
@@ -1109,6 +1113,7 @@ table.custom-table {
   display: flex;
   align-items: center;
   gap: 100px;
+  margin-top: 50px;
   margin-bottom: 150px;
 
   .sign-item {
@@ -1143,12 +1148,13 @@ table.custom-table {
 
 .program-insight {
   display: grid;
+  margin-top: 20px;
   grid-template-areas:
   'breakdown equipment'
   'breakdown manpower';
 
   .item {
-
+    margin-bottom: 25px;
     &.breakdown {
       grid-area: breakdown;
     }
@@ -1186,5 +1192,22 @@ table.custom-table {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.plan-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 30px;
+  padding-bottom: 50px;
+  .item {
+    width: 32%;
+
+    img {
+      width: 100%;
+    }
   }
 }
