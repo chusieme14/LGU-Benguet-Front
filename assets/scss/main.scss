@@ -239,18 +239,30 @@
   }
 }
 
-form button.v-btn {
-  background: #EBEE00 !important;
-  color: #000;
-  height: 50px !important;
-  font-weight: 600;
-  font-size: 20px;
+form { 
+  button {
+    &.v-btn {
+      background: #EBEE00 !important;
+      color: #000;
+      height: 50px !important;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    &.cancel-btn {
+      margin-top: 30px;
+      background-color: transparent !important;
+      color: #818181 !important;
+    }
+  }
 }
 
 .signup strong {
   cursor: pointer;
 }
-// landing page /
+
+
+
+// landing page *****************************/
 .index-text {
   font-size: 18px;
   @media (max-width: 450px) {
@@ -1031,14 +1043,18 @@ form button.v-btn {
 // summary
 table.custom-table {
   width: 100%;
+  border-spacing: 0;
   .header {
     background-color: #FFFFFF;
     th {
       background-color: #FFFFFF;
       text-align: left;
       border: none;
-      padding-left: 5px;
+      padding: 10px 0;
       text-transform: uppercase;
+      &:first-child {
+        padding-left: 5px;
+      }
     }
   }
   tr {
@@ -1078,6 +1094,46 @@ table.custom-table {
       }
     }
   }
+}
+
+.custom-size-td {
+  th {
+    font-size: 10px;
+  }
+}
+
+.customTD {
+  padding-left: 5px;
+}
+.multiple-td {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  span {
+    display: block;
+    font-weight: 600;
+    font-size: 9px;
+    color: #000000;
+    text-align: left;
+    width: 30px;
+  }
+}
+.th-font {
+  font-size: 12px;
+  font-weight: 700;
+  padding-bottom: 3px;
+}
+.th-underline {
+  width: 100%;
+  display: block;
+  margin-right: 10px;
+  border-bottom: 1px solid #CACACA;
+}
+
+span.spacer {
+  height: 19px;
+  display: block;
 }
 
 .browse-link-inner-cont {
@@ -1149,6 +1205,7 @@ table.custom-table {
 .program-insight {
   display: grid;
   margin-top: 20px;
+  gap: 50px;
   grid-template-areas:
   'breakdown equipment'
   'breakdown manpower';
@@ -1167,25 +1224,32 @@ table.custom-table {
   }
 }
 
-// .table-total {
-//   td {
-//     font-weight: 600;
-//     font-size: 20px;
-//     &:first-child {
-//       display: flex;
-//       text-align: right;
-//       justify-content: flex-end;
+tr.table-total {
+  td {
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+    border-bottom: none !important;
+    // &:first-child {
+    //   display: flex;
+    //   text-align: right;
+    //   justify-content: flex-end;
 
-//       span {
-//         border-bottom: 1px solid #000000;
-//         display: block;
-//       }
-//     }
-//     &:not(:first-child) {
-//       border-bottom: 1px solid #000000;
-//     }
-//   }
-// }
+    //   span {
+    //     border-bottom: 1px solid #000000;
+    //     display: block;
+    //   }
+    // }
+    &.total {
+      border-bottom: 1px solid #000000 !important;
+    }
+  }
+}
+
+.o-total {
+  font-weight: 600 !important;
+  font-size: 20px !important;
+}
 
 .program-insight .item {
   h4 {
@@ -1208,6 +1272,67 @@ table.custom-table {
 
     img {
       width: 100%;
+    }
+  }
+}
+// detailed unit price
+.tables-wrapper {
+  margin-top: 30px;
+  padding-bottom: 100px;
+  
+  table {
+    margin-bottom: 20px;
+
+    &:last-child {
+      border-bottom: 1px solid #000000;
+    }
+  }
+
+  .sign-valid {
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+}
+
+.unit-price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  .per-unit {
+    border-radius: 50px;
+    border: 1px solid #CACACA;
+    height: 43px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: fit-content;
+    transition: 0.4s;
+
+    &.active {
+      background-color: #FFFFFF;
+      border: 1px solid #FFFFFF;
+    }
+    &:hover {
+      background-color: #FFFFFF;
+      border: 1px solid #FFFFFF;
+    }
+  }
+}
+
+// Approved budget
+.approv-budget-page table .header th {
+  font-size: 12px !important;
+}
+
+.procurement-page {
+  table {
+    &:last-child {
+      border: none;
     }
   }
 }

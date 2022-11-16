@@ -59,16 +59,21 @@ export default {
         },
         {
           index:2,
+          name: 'Awarded Projects',
+          route: 'awarded-projects'
+        },
+        {
+          index:3,
           name: 'Citizen’s Charter',
           route: 'citizen-charter'
         },
         {
-          index:3,
+          index:4,
           name: 'Organizational Chart',
           route: 'organizational-chart'
         },
         {
-          index:4,
+          index:5,
           name: 'Building Permit Forms',
           route: 'building-permit-forms'
         },
