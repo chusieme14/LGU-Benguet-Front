@@ -17,9 +17,10 @@
       <span>Philippine Standard Time:</span><br/>
       <h4>{{clock}}</h4>
     </div>
-    <v-btn depressed color="#ebebeb" class="px-5 text-capitalize">
+    <!-- {{$auth.user}} asdsadsa -->
+    <v-btn depressed color="#ebebeb" @click="goTo('contractor-login')" class="px-5 text-capitalize">
       <v-icon left>mdi-account</v-icon>
-      Guest
+      {{$auth.user? $auth.user.full_name : 'Guest' }}
     </v-btn>
   </v-toolbar>
 </div>

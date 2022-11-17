@@ -32,6 +32,7 @@
             <label for="">Password</label>
             <v-text-field
               v-model="payload.password"
+              :rules="[!!payload.password || 'Password is required']"
               placeholder="*****"
               type="password"
               required
@@ -60,7 +61,7 @@
 </template>
 <script>
 export default {
-  layout: "login",
+  layout:'blank',
   data(){
     return{
       valid: true,
@@ -79,11 +80,33 @@ export default {
     gotoRegister(){
       this.$router.push({ path: '/contractor/register' })
     },
-    login(){
+    // login(){
+    //   this.$axios.post('login-contractor').then()
+
+    // }
+    async login(){
       if(!this.$refs.form.validate()) return
-      console.log("djshdjsdh")
-      
-    }
+            try {
+              // this.loading =true
+                let loginCredential = this.payload
+                console.log(loginCredential, 'test')
+                await this.$auth.loginWith('local',{
+                    data: {
+                        email:loginCredential.email,
+                        password:loginCredential.password,
+                    }
+                })
+                if(this.$auth.user){
+                    this.loading = false
+                    localStorage.setItem('nav',2)
+                    this.goTo('awarded-projects')
+                }
+            } catch (error) {
+              alert(error.response.data.message)
+                // this.$errorNotification(error.response.data.message)
+
+            }
+        },
   }
 };
 </script>

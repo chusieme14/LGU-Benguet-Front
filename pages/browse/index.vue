@@ -48,6 +48,7 @@
 import customTable from '~/components/ui/custom-table.vue'
 export default {
   components: { customTable },
+  auth:false,
   data() {
     return {
       setting: {
