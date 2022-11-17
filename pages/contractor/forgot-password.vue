@@ -11,8 +11,8 @@
       <div class="login-form">
         <div>
           <img src="/images/logo.png" alt="">
-          <h2>La Trinidad, Benguet</h2>
-          <p>The Strawberry and Rose Capital of the Philippines</p>
+          <h2>Forgot Password</h2>
+          <p>Please provide your email address</p>
           <v-form
             ref="form"
             v-model="valid"
@@ -29,30 +29,9 @@
               hide-details="auto"
               class="mb-2"
             ></v-text-field>
-            <label for="">Password</label>
-            <v-text-field
-              v-model="payload.password"
-              :rules="[!!payload.password || 'Password is required']"
-              placeholder="*****"
-              type="password"
-              required
-              outlined
-              dense
-            ></v-text-field>
-            <div class="remember">
-                <div>
-                  <v-icon  @click="isremember=!isremember" v-if="!isremember">
-                    mdi-circle-outline
-                  </v-icon>
-                  <v-icon  @click="isremember=!isremember" v-else>
-                    mdi-circle-slice-8
-                  </v-icon>
-                  Remember me
-                </div>
-                <p>Forgot Password</p>
-            </div>
-            <v-btn @click="login" color="primary" width="100%">LOGIN</v-btn>
-            <p class="signup">Don’t have an account? <strong class="csr" @click="gotoRegister">Signup</strong></p>
+            <v-btn class="primary-btn" color="primary" width="100%">Recover password</v-btn>
+            <v-btn class="cancel-btn" width="100%">Cancel</v-btn>
+            <p class="signup">DYou did not request to reset your password? <strong class="csr" @click="gotoLogin">Login</strong></p>
           </v-form>
         </div>
       </div>
@@ -61,7 +40,7 @@
 </template>
 <script>
 export default {
-  layout:'blank',
+  layout: "login",
   data(){
     return{
       valid: true,
@@ -80,33 +59,11 @@ export default {
     gotoRegister(){
       this.$router.push({ path: '/contractor/register' })
     },
-    // login(){
-    //   this.$axios.post('login-contractor').then()
-
-    // }
-    async login(){
+    login(){
       if(!this.$refs.form.validate()) return
-            try {
-              // this.loading =true
-                let loginCredential = this.payload
-                console.log(loginCredential, 'test')
-                await this.$auth.loginWith('local',{
-                    data: {
-                        email:loginCredential.email,
-                        password:loginCredential.password,
-                    }
-                })
-                if(this.$auth.user){
-                    this.loading = false
-                    localStorage.setItem('nav',2)
-                    this.goTo('awarded-projects')
-                }
-            } catch (error) {
-              alert(error.response.data.message)
-                // this.$errorNotification(error.response.data.message)
-
-            }
-        },
+      console.log("djshdjsdh")
+      
+    }
   }
 };
 </script>

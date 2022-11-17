@@ -19,13 +19,15 @@
           right
           v-model="tab"
         >
+        <template v-for="item in menus">
           <v-tab
-            v-for="item in menus"
+          v-if="item.name"
             :key="item.name"
             @click="redirect(item)"
           >
             {{item.name}}
           </v-tab>
+        </template>
           <v-tab>
             <div style="width:400px ;">
             <v-text-field
@@ -46,6 +48,7 @@
 export default {
   data(){
     return {
+      test:true,
       menus:[
         {
           index:0,
@@ -57,18 +60,24 @@ export default {
           name: 'Browse',
           route: 'browse'
         },
+        this.$auth.user ?
         {
           index:2,
+          name: 'Awarded Projects',
+          route: 'awarded-projects'
+        } : {},
+        {
+          index:3,
           name: 'Citizen’s Charter',
           route: 'citizen-charter'
         },
         {
-          index:3,
+          index:4,
           name: 'Organizational Chart',
           route: 'organizational-chart'
         },
         {
-          index:4,
+          index:5,
           name: 'Building Permit Forms',
           route: 'building-permit-forms'
         },

@@ -64,6 +64,7 @@ export default {
       logout: '/contractor/login',
       login: '/contractor/login',
       callback: '/contractor/login',
+      home: '/awarded-projects'
     },
     strategies: {
       local: {
@@ -76,9 +77,9 @@ export default {
         },
         tokenType: '',
         endpoints: {
-          login: { url: 'login', method: 'post' },
-          logout: { url: 'logout', method: 'post' },
-          user: { url: 'user-details', method: 'get' }
+          login: { url: 'login-contractor', method: 'post' },
+          logout: { url: 'logout-contractor', method: 'post' },
+          user: { url: 'contractor-details', method: 'get' }
         }
       }
     },
@@ -114,5 +115,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  router: {
+    middleware: ['auth']
   }
 }

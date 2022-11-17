@@ -1,7 +1,7 @@
 <template>
   <div class="browse-link-inner-cont">
     <h2>Summary</h2>
-    <table>
+    <table class="custom-table">
       <tr class="header">
         <th>ITEM</th>
         <th>Description</th>
