@@ -1,7 +1,7 @@
 import Vue from 'vue'
 // Vue.prototype.$imageUrl = 'https://api.runyourlife.checkmy.dev/images/'
 // Vue.prototype.$imageUrl2 = 'https://api.runyourlife.checkmy.dev/'
-Vue.prototype.$imageUrl = 'http://localhost:9292/images/'
+Vue.prototype.$imageUrl = process.env.basePath
 Vue.prototype.$imageUrl2 = 'http://localhost:9292/'
 Vue.prototype.$countries = 'countries'
 Vue.prototype.$cities = 'cities'

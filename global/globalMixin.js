@@ -24,6 +24,9 @@ Vue.mixin({
         // fullNotification(message) {
         //     this.$awn.success(`${message}`)
         // },
+        imageLink(path){
+          return this.$imageUrl+path
+        },
         goTo(name, params = {}) {
             this.$router.push({ name: name, params: params })
         },
@@ -44,5 +47,35 @@ Vue.mixin({
 
             link.click();
         },
+        _createFilterParams(filters,old_params=true){
+          let params = "";
+          for (const item in filters){
+              // if(filters[item])
+                  if(filters[item]!=null){
+                      params = params + '&' + item + '=' + filters[item]
+                  }
+          }
+          if (old_params) return params;
+          else return params.substring(1)
+
+      },
+      _createParams(params,old_params) {
+        let param = "";
+        let sortby
+        let sorttype
+        // let sortby = params.sortBy[0];
+        // let sorttype = params.sortDesc[0];
+        if (params.sortBy && params.sortBy[0]) sortby = params.sortBy[0];
+        if (params.sortDesc && params.sortDesc[0]) sorttype = params.sortDesc[0];
+        let page = params.page;
+        let perpage = params.itemsPerPage;
+
+        param += `page=${page}&per_page=${perpage}`;
+        if (sortby) {
+            param += `&sortBy=${sortby}/${sorttype ? "asc" : "desc"}`;
+        }
+        if (old_params) param+=`&${old_params}`
+        return param;
+    },
     }
 })

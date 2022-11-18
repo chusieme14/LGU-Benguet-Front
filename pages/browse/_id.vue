@@ -13,6 +13,7 @@
 import projectInfo from '@/components/browse/projectInfo.vue'
 import subMenu from '@/components/browse/subMenu.vue'
 export default {
+  auth:false,
   components:{
     projectInfo,
     subMenu

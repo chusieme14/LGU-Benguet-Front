@@ -84,6 +84,7 @@
         <!-- end header -->
         <v-data-table v-model="selected" :headers="tableData.headers" :items="tableData.items" :single-select="false"
             show-select :search="data.keyword" :server-items-length="tableData.total" :options.sync="tableData.options"
+            @click:row="selectRecord"
             :items-per-page="tableData.options.itemsPerPage" @update:options="$emit('fetchPage')"
             :loading="data.loading" class="cursor-pointer table-fix-height" fixed-header height="68.5vh">
             <template v-for="(head, index) of tableData.headers" v-slot:[`item.${head.value}`]="props">
@@ -186,6 +187,9 @@ export default {
         },
     },
     methods: {
+      selectRecord(item){
+        this.$emit('selectRecord', item)
+      },
         edit(item) {
             this.$emit("edit", item);
         },

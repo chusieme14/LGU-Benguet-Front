@@ -28,6 +28,7 @@ export default {
   },
   env: {
     baseUrl: process.env.API_URL,
+    basePath: process.env.BASE_PATH,
     credentials: true,
   },
 
@@ -40,6 +41,8 @@ export default {
   plugins: [
     { src: '~global/globalMixin', ssr: true },
     { src: '~plugins/components.js' },
+    { src: '~global/apiKey.js' },
+    { src: '~/plugins/vue-pdf-embed.js', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

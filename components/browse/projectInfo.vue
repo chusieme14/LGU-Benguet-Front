@@ -1,32 +1,36 @@
 <template>
       <section class="browse-main-details">
         <h1>
-          Road opening/improvement at pipingew II (Near <br> Patinglad Res.)
+          {{project.name}}
         </h1>
         <div class="browse-custome-table">
           <div class="item">
             <label>Location&#8239;:</label>
-            <h3>Lubas, La Trinidad, Benguet</h3>
+            <h3 v-for="(brgy, index) in project.barangays" :key="brgy.name">
+              {{brgy.complete_address}}{{index == project.barangays.length -1 ? '' : ','}}
+            </h3>
           </div>
           <div class="item">
             <label>Classification&#8239;:</label>
-            <h3>Municipal</h3>
+            <h3>{{project.classification}}</h3>
           </div>
           <div class="item">
             <label>Project Type&#8239;:</label>
-            <h3>Road</h3>
+            <h3 v-for="(type,index) in project.types" :key="type.name">
+              {{type.name}}{{index == project.types.length -1 ? '' : ','}}
+            </h3>
           </div>
           <div class="item">
             <label>Appropriation&#8239;:</label>
-            <h3>Php 1,000,000.00</h3>
+            <h3>Php {{project.appropriation}}</h3>
           </div>
           <div class="item">
             <label>Fund Source&#8239;:</label>
-            <h3>20% Municipal Development Fund, FY2022</h3>
+            <h3>{{project.fund_source}}</h3>
           </div>
           <div class="item">
             <label>Contract Reference Number&#8239;:</label>
-            <h3>POW-8751-2022</h3>
+            <h3>{{project.program_of_work ? project.program_of_work.contract_reference_number : ''}}</h3>
           </div>
           <div class="item">
             <label>Starting Date&#8239;:</label>
@@ -34,11 +38,11 @@
           </div>
           <div class="item">
             <label>Days to Complete&#8239;:</label>
-            <h3>51 Working Days</h3>
+            <h3>{{project.program_of_work ? project.program_of_work.days_to_complete : 0}} Working Days</h3>
           </div>
           <div class="item">
             <label>Total Mandays&#8239;:</label>
-            <h3>369 Man-days</h3>
+            <h3>{{project.mandays}} Man-days</h3>
           </div>
           <div class="item">
             <label>Implementation&#8239;:</label>
@@ -54,7 +58,9 @@
           </div>
           <div class="item">
             <label>Description&#8239;:</label>
-            <h3>B5, SPL. A, SPL. B, 801 (1) a, 103, 404, 903 (2), 900 (1) c2, 102, 500 (5)</h3>
+            <h3 v-for="(dupa, index) in project.dupas" :key="index + 'dupas'">
+              {{dupa.item_of_work.item_number}}{{index == project.dupas.length -1 ? '' : ','}}
+            </h3>
           </div>
         </div>
       </section>
@@ -76,3 +82,22 @@
         </div>
       </section> -->
 </template>
+<script>
+export default {
+  data(){
+    return{
+      project:{}
+    }
+  },
+  async mounted(){
+    await this.initialize()
+  },
+  methods:{
+    async initialize(){
+      let project = await this.$axios.get(`projects/${this.$route.params.id}`);
+      console.log('params', project.data)
+      this.project = project.data;
+    }
+  }
+}
+</script>

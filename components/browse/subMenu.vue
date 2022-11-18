@@ -4,10 +4,10 @@
         <div>
           <div class="browse-inn-wrap">
             <li
-              class="csr"
-              @click="goTo(item.route)"
-              v-for="item in menus"
-              :key="item.name"
+            v-for="(item, index) in menus"
+            :key="item.name"
+            @click="redirect(item, index)"
+            :class="['csr', checkIfActive(index) ? 'active' : '']"
             >
               {{item.name}}
             </li>
@@ -52,7 +52,21 @@ export default {
           name: 'PROCUREMENT',
           route:'browse-id-procurement'
         },
-      ]
+      ],
+      local:0
+    }
+  },
+  mounted(){
+    this.local = parseInt(localStorage.getItem('sub_nav')) || 0
+  },
+  methods:{
+    redirect(item, index){
+      localStorage.setItem('sub_nav', index)
+      this.local = index
+      this.goTo(item.route)
+    },
+    checkIfActive(index){
+      return this.local == index
     }
   }
 }
