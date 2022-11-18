@@ -14,18 +14,18 @@
               I.
               <ol type="a">
                 <li v-for="(mat_summ, i) in material_summaries" :key="i">
-                  {{mat_summ.material}}
+                  {{mat_summ.material.name}}
                 </li>
               </ol>
             </td>
             <td>
               <li v-for="(mat_summ, i) in material_summaries" :key="i">
-                {{mat_summ.unit}}
+                {{mat_summ.material.unit.abbreviation}}
               </li>
             </td>
             <td>
               <li v-for="(mat_summ, i) in material_summaries" :key="i">
-                {{mat_summ.unit_price}}
+                P {{mat_summ.unit_cost}}
               </li>
             </td>
           </tr>
@@ -43,18 +43,18 @@
               II.
               <ol type="a">
                 <li v-for="(labor_summ, n) in labor_summaries" :key="n">
-                  {{labor_summ.labor}}
+                  {{labor_summ.manpower.job_title}}
                 </li>
               </ol>
             </td>
             <td>
               <li v-for="(labor_summ, n) in labor_summaries" :key="n">
-                {{labor_summ.unit}}
+                Daily
               </li>
             </td>
             <td>
               <li v-for="(labor_summ, n) in labor_summaries" :key="n">
-                {{labor_summ.rate}}
+               P {{labor_summ.daily_rate}}
               </li>
             </td>
           </tr>
@@ -72,18 +72,18 @@
               III.
               <ol type="a">
                 <li v-for="(equip_summ, m) in equip_summaries" :key="m">
-                  {{equip_summ.equip}}
+                  {{equip_summ.name}}
                 </li>
               </ol>
             </td>
             <td>
               <li v-for="(equip_summ, n) in equip_summaries" :key="n">
-                {{equip_summ.unit}}
+                Daily
               </li>
             </td>
             <td>
               <li v-for="(equip_summ, n) in equip_summaries" :key="n">
-                {{equip_summ.rate}}
+               P {{equip_summ.equipment.unit_price}}
               </li>
             </td>
           </tr>
@@ -118,149 +118,60 @@
 export default {
   data() {
     return {
-      material_summaries : [
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
+      material_summaries : [],
+      labor_summaries: [],
+      equip_summaries: [],
+      equipmentsData: {
+        options: {
+          itemsPerPage: -1,
         },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
+        filter: {
+          dupa_id: "",
+          project_id: this.$route.params.id,
         },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-        {
-          material: 'Tarpaulin',
-          unit: 'ft2',
-          unit_price: 'P 50.00'
-        },
-
-      ],
-      labor_summaries: [
-        {
-          labor: 'Construction foreman',
-          unit: 'Daily',
-          rate: 'P 716.22'
-        },
-        {
-          labor: 'Construction foreman',
-          unit: 'Daily',
-          rate: 'P 716.22'
-        },
-        {
-          labor: 'Construction foreman',
-          unit: 'Daily',
-          rate: 'P 716.22'
-        },
-        {
-          labor: 'Construction foreman',
-          unit: 'Daily',
-          rate: 'P 716.22'
-        },
-        {
-          labor: 'Construction foreman',
-          unit: 'Daily',
-          rate: 'P 716.22'
-        },
-        {
-          labor: 'Construction foreman',
-          unit: 'Daily',
-          rate: 'P 716.22'
-        },
-        {
-          labor: 'Construction foreman',
-          unit: 'Daily',
-          rate: 'P 716.22'
-        },
-      ],
-      equip_summaries: [
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-        {
-          equip: 'Backhoe with Breaker (0.80m^3)',
-          unit: 'Daily',
-          rate: 'P 15,958.80',
-        },
-      ]
+      },
     }
+  },
+  async mounted() {
+    this.getEquipments();
+    this.getManPower();
+    this.getMaterials();
+  },
+  methods:{
+    getEquipments() {
+      let params = this._createParams(this.equipmentsData.options);
+      params = params + this._createFilterParams(this.equipmentsData.filter);
+
+      this.$axios.get(`equipment-and-capacities?${params}`).then(({ data }) => {
+        // this.tableData.items = data.data;
+        // this.tableData.total= data.total
+        // this.tableData.selected=[]
+        this.equip_summaries = data.data;
+        console.log(data.data, "equipment-and-capacities");
+      });
+    },
+
+    getManPower() {
+      let params = this._createParams(this.equipmentsData.options);
+      params = params + this._createFilterParams(this.equipmentsData.filter);
+
+      this.$axios.get(`designation-labors?${params}`).then(({ data }) => {
+        this.labor_summaries = data.data;
+        console.log(data, "designation-labors");
+      });
+    },
+
+    getMaterials() {
+      let params = this._createParams(this.equipmentsData.options);
+      params = params + this._createFilterParams(this.equipmentsData.filter);
+
+      this.$axios
+        .get(`material-and-specifications?${params}`)
+        .then(({ data }) => {
+          console.log(data, "material");
+          this.material_summaries = data.data;
+        });
+    },
   }
 }
 </script>

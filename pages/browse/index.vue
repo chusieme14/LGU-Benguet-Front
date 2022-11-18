@@ -19,6 +19,7 @@
           <custom-table
             :data="setting"
             :tableData="tableData"
+            @selectRecord="selectRecord"
             @search="search"
             @fetchPage="initialize"
             :hide="['floater-btn']"
@@ -95,6 +96,10 @@ export default {
         this.tableData.total = data.total;
         this.setting.loading = false;
       })
+    },
+    selectRecord(item){
+      localStorage.setItem('sub_nav', 0)
+      this.goTo('browse-id-summary' ,{id:item.id})
     }
   }
 }
