@@ -8,30 +8,43 @@
           <p>The Strawberry and Rose Capital of the Philippines</p>
         </div>
       </div>
-      <div class="login-form">
+      <div class="login-form update-password">
         <div>
           <img src="/images/logo.png" alt="">
-          <h2>Forgot Password</h2>
-          <p>Please provide your email address</p>
+          <h2>Enter new password</h2>
+          <p>Your new password must be different from previously used password.</p>
           <v-form
             ref="form"
             v-model="valid"
             lazy-validation
           >
-            <label for="">Email</label>
+            <label for="">Password</label>
             <v-text-field
-              v-model="payload.email"
-              :rules="[!!payload.email || 'Email is required']"
-              placeholder="@mail.com"
+              v-model="payload.password"
+              placeholder="*****"
+              type="password"
               required
               outlined
               dense
-              hide-details="auto"
-              class="mb-2"
+              :append-icon="show1 ? 'Hide' : 'Show'"
+              :type="show1 ? 'text' : 'password'"
+              @click:append="show1 = !show1"
+            >
+            </v-text-field>
+            <label for="">Confirm Password</label>
+            <v-text-field
+              v-model="payload.confirm_password"
+              placeholder="*****"
+              type="password"
+              required
+              outlined
+              dense
+              :append-icon="show2 ? 'Hide' : 'Show'"
+              :type="show2 ? 'text' : 'password'"
+              @click:append="show2 = !show2"
             ></v-text-field>
-            <v-btn class="primary-btn" color="primary" width="100%">Recover password</v-btn>
+            <v-btn @click="login" color="primary" width="100%">Change my password</v-btn>
             <v-btn class="cancel-btn" width="100%">Cancel</v-btn>
-            <p class="signup">You did not request to reset your password? <strong class="csr" @click="gotoLogin">Login</strong></p>
           </v-form>
         </div>
       </div>
@@ -43,12 +56,15 @@ export default {
   layout: "login",
   data(){
     return{
+      show1: false,
+      show2: false,
+      password: 'Password',
       valid: true,
       payload:{
-        email:'',
+        confirm_password:'',
         password:''
       },
-      isremember: false
+      isremember: false,
     }
   },
   methods:{

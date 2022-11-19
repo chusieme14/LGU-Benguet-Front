@@ -11,27 +11,24 @@
       <div class="login-form">
         <div>
           <img src="/images/logo.png" alt="">
-          <h2>Forgot Password</h2>
-          <p>Please provide your email address</p>
+          <h2>OTP</h2>
+          <p>Please enter the 6 digit code that we sent your email address</p>
           <v-form
             ref="form"
             v-model="valid"
             lazy-validation
           >
-            <label for="">Email</label>
             <v-text-field
               v-model="payload.email"
-              :rules="[!!payload.email || 'Email is required']"
-              placeholder="@mail.com"
+              :rules="[!!payload.otp || '']"
               required
               outlined
               dense
               hide-details="auto"
               class="mb-2"
             ></v-text-field>
-            <v-btn class="primary-btn" color="primary" width="100%">Recover password</v-btn>
+            <v-btn class="primary-btn" color="primary" width="100%">verify and proceed</v-btn>
             <v-btn class="cancel-btn" width="100%">Cancel</v-btn>
-            <p class="signup">You did not request to reset your password? <strong class="csr" @click="gotoLogin">Login</strong></p>
           </v-form>
         </div>
       </div>
