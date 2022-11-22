@@ -45,6 +45,20 @@
   display: none !important;
 }
 
+.input {
+  position: relative;
+}
+
+.v-input__append-inner {
+  margin: 0 !important;
+  align-self: center !important;
+}
+
+.v-input__append-inner button.v-icon {
+  font-size: 12px;
+  font-weight: 600;
+  color: #818181 !important;
+}
 
 
 .csr {
@@ -239,7 +253,12 @@
   }
 }
 
-form { 
+.login-main-container .login-form form.v-form { 
+  button.cancel-btn.theme--light {
+    margin-top: 20px;
+    background: transparent !important;
+    color: #818181 !important;
+  }
   button {
     &.v-btn {
       background: #EBEE00 !important;
@@ -247,11 +266,7 @@ form {
       height: 50px !important;
       font-weight: 600;
       font-size: 20px;
-    }
-    &.cancel-btn {
       margin-top: 30px;
-      background-color: transparent !important;
-      color: #818181 !important;
     }
   }
 }
