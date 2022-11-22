@@ -88,7 +88,7 @@
           <td class="total"></td>
         </tr>
     </table>
-    <div class="sign-valid">
+    <!-- <div class="sign-valid">
       <div class="sign-item">
         <label>Prepared by:</label>
         <h3>{{project.approved_budget.prepared.fullname}}</h3>
@@ -105,6 +105,26 @@
         <label>Approved:</label>
         <h3>{{project.approved_budget.approved_by}}</h3>
         <span>{{project.approved_budget.approved_by_position}}</span>
+        <img src="/images/sign.png" alt="sign" />
+      </div>
+    </div> -->
+    <div class="sign-valid">
+      <div class="sign-item">
+        <label>Prepared by:</label>
+        <h3>Jun L. Daliones</h3>
+        <span>Engineer I</span>
+        <img src="/images/sign.png" alt="sign" />
+      </div>
+      <div class="sign-item">
+        <label>Recommending Approval:</label>
+        <h3>Benedict P. Pineda</h3>
+        <span>Municipal Engineer</span>
+        <img src="/images/sign.png" alt="sign" />
+      </div>
+      <div class="sign-item">
+        <label>Approved:</label>
+        <h3>Romeo K. Salda</h3>
+        <span>Municipal Mayor</span>
         <img src="/images/sign.png" alt="sign" />
       </div>
     </div>
