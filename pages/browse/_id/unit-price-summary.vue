@@ -72,7 +72,7 @@
               III.
               <ol type="a">
                 <li v-for="(equip_summ, m) in equip_summaries" :key="m">
-                  {{equip_summ.name}}
+                  {{equip_summ.equipment.name}}
                 </li>
               </ol>
             </td>
