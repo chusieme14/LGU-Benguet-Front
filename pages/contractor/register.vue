@@ -80,6 +80,7 @@
 <script>
 export default {
   layout: 'blank',
+  auth:false,
   data() {
     return {
       passwordRules: [v => !!v || "Password is required"],
@@ -104,6 +105,7 @@ export default {
       this.$axios.post('register-contractor', this.payload)
         .then(({ data }) => {
           console.log(data, 'test')
+          this.goTo('contractor-login')
         })
         .catch(error => {
           alert('all fields are required')

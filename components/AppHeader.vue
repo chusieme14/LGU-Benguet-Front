@@ -18,7 +18,7 @@
       <h4>{{clock}}</h4>
     </div>
     <!-- {{$auth.user}} asdsadsa -->
-    <v-btn depressed color="#ebebeb" @click="goTo('contractor-login')" class="px-5 text-capitalize">
+    <v-btn depressed color="#ebebeb" @click="redirect" class="px-5 text-capitalize">
       <v-icon left>mdi-account</v-icon>
       {{$auth.user? $auth.user.full_name : 'Guest' }}
     </v-btn>
@@ -39,6 +39,12 @@ export default {
     }
   },
   methods:{
+    redirect(){
+      if(this.$auth.user){
+        return
+      }
+      this.goTo('contractor-login')
+    },
     updateCurrentTime() {
       this.clock = this.$moment().format("dddd, MMMM Do, YYYY, LTS");
     },

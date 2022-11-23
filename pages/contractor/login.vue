@@ -49,7 +49,7 @@
                   </v-icon>
                   Remember me
                 </div>
-                <p>Forgot Password</p>
+                <p @click="goTo('contractor-forgot-password')">Forgot Password</p>
             </div>
             <v-btn @click="login" color="primary" width="100%">LOGIN</v-btn>
             <p class="signup">Don’t have an account? <strong class="csr" @click="gotoRegister">Signup</strong></p>
@@ -61,6 +61,7 @@
 </template>
 <script>
 export default {
+  auth:false,
   layout:'blank',
   data(){
     return{

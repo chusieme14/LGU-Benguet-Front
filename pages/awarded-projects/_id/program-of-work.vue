@@ -15,12 +15,12 @@
           <th>TOTAL</th>
         </tr>
         <tr v-for="(item, i) in programs" :key="i">
-          <td>{{item.item_name}}</td>
-          <td>{{item.item_scope}}</td>
-          <td>{{item.item_percent_total}}</td>
-          <td>{{item.item_qnty}}</td>
-          <td>{{item.item_unit_cost}}</td>
-          <td>{{item.item_total}}</td>
+          <td>{{item.item_of_work.name}}</td>
+          <td>{{item.item_of_work.item_number}}</td>
+          <td>{{ getPercentageDecimal(item.total) }}</td>
+          <td>{{ item.quantity }}{{ item.item_of_work.unit.abbreviation }}</td>
+          <td>{{item.total_unit_cost}}</td>
+          <td>{{item.total}}</td>
         </tr>
         <tr class="table-total">
           <td></td>
@@ -29,7 +29,7 @@
           <td class="total"></td>
           <td class="total"></td>
           <td class="total">
-            P 999,954.13
+            P {{overall_total}}
           </td>
         </tr>
       </table>
@@ -55,16 +55,26 @@
             </td>
             <td>
               <ul>
-                <li>19.77</li>
-                <li>50.58</li>
-                <li>6.25</li>
+                <li>
+                  {{getPercentageDecimal(project.program_of_work.labor_total)}}
+                </li>
+                <li> {{
+                          getPercentageDecimal(
+                            project.program_of_work.material_total
+                          )
+                        }}</li>
+                <li>{{
+                          getPercentageDecimal(
+                            project.program_of_work.equipment_total
+                          )
+                        }}</li>
               </ul>
             </td>
             <td>
               <ul>
-                <li>197,685.86</li>
-                <li>505,793.86</li>
-                <li>62,533.86</li>
+                <li>{{ project.program_of_work.labor_total }}</li>
+                <li>{{ project.program_of_work.material_total }}</li>
+                <li> {{ project.program_of_work.equipment_total }}</li>
               </ul>
             </td>
           </tr>
@@ -80,18 +90,34 @@
             </td>
             <td>
               <ul>
-                <li>6.54</li>
-                <li>6.54</li>
-                <li>6.54</li>
-                <li>6.54</li>
+                <li>{{
+                          getPercentageDecimal(
+                            project.program_of_work.tax_total
+                          )
+                        }}</li>
+                <li>{{
+                          getPercentageDecimal(
+                            project.program_of_work.ocm_total
+                          )
+                        }}</li>
+                <li>{{
+                          getPercentageDecimal(
+                            project.program_of_work.contractors_profit_total
+                          )
+                        }}</li>
+                <li>{{
+                          getPercentageDecimal(
+                            project.program_of_work.mobilization_total
+                          )
+                        }}</li>
               </ul>
             </td>
             <td>
               <ul>
-                <li>65,417.56</li>
-                <li>65,417.56</li>
-                <li>65,417.56</li>
-                <li>65,417.56</li>
+                <li>{{ project.program_of_work.tax_total }}</li>
+                <li> {{ project.program_of_work.ocm_total }}</li>
+                <li>{{ project.program_of_work.contractors_profit_total }}</li>
+                <li>{{ project.program_of_work.mobilization_total }}</li>
               </ul>
             </td>
           </tr>
@@ -118,33 +144,9 @@
             <th>Description</th>
             <th>No. needed</th>
           </tr>
-          <tr>
-            <td>Backhoe with Breaker (0.80m^3)</td>
-            <td>1 Unit</td>
-          </tr>
-          <tr>
-            <td>One Bagger Mixer</td>
-            <td>1 Unit</td>
-          </tr>
-          <tr>
-            <td>Dumptruck (12yd)</td>
-            <td>1 Unit</td>
-          </tr>
-          <tr>
-            <td>Plate Compactor (5hp)</td>
-            <td>1 Unit</td>
-          </tr>
-          <tr>
-            <td>Bar Cutter</td>
-            <td>1 Unit</td>
-          </tr>
-          <tr>
-            <td>Water Truck</td>
-            <td>1 Unit</td>
-          </tr>
-          <tr>
-            <td>Bar Bender</td>
-            <td>1 Unit</td>
+          <tr v-for="(item, i) in equipments" :key="i + 'equip'">
+            <td>{{item.equipment.name}}</td>
+            <td>{{item.number_of_units}} Unit(s)</td>
           </tr>
         </table>
       </div>
@@ -153,33 +155,9 @@
           Manpower
         </h4>
         <table class="custom-table">
-          <tr>
-            <td>Civil Engineer</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Const. Foreman</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Mason</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>Steelman</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>Skilled Laborer</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>Carpenter</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Laborer</td>
-            <td>10</td>
+          <tr v-for="(item, i) in manpowers" :key="i + 'manpower'">
+            <td>{{item.manpower.job_title}}</td>
+            <td>{{item.number_of_person}}</td>
           </tr>
         </table>
       </div>
@@ -207,54 +185,109 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
-      programs: [
-        {
-          item_name: 'B5',
-          item_scope: 'Project Billboard/Sign Baord',
-          item_percent_total: '0.80',
-          item_qnty: '1.00 ls',
-          item_unit_cost: '7,999.03',
-          item_total: '7,999.03',
+      programs:[],
+      equipments:[],
+      manpowers:[],
+      setting: {
+        title: "",
+        keyword: "",
+        filter: {
+          project_id: this.$route.params.id,
+          status: 1,
         },
-        {
-          item_name: 'B5',
-          item_scope: 'Project Billboard/Sign Baord',
-          item_percent_total: '0.80',
-          item_qnty: '1.00 ls',
-          item_unit_cost: '7,999.03',
-          item_total: '7,999.03',
+      },
+      designation_equipment_settings:{
+        options: {
+          itemsPerPage: 15,
         },
-        {
-          item_name: 'B5',
-          item_scope: 'Project Billboard/Sign Baord',
-          item_percent_total: '0.80',
-          item_qnty: '1.00 ls',
-          item_unit_cost: '7,999.03',
-          item_total: '7,999.03',
+        filter: {
+            dupa_id : "",
+            project_id: this.$route.params.id,
         },
-        {
-          item_name: 'B5',
-          item_scope: 'Project Billboard/Sign Baord',
-          item_percent_total: '0.80',
-          item_qnty: '1.00 ls',
-          item_unit_cost: '7,999.03',
-          item_total: '7,999.03',
+      },
+      project:{
+        approved_budget:{
+          prepared: {
+            fullname: '',
+            signature:''
+          },
+          rec_approve:{
+            fullname: '',
+            signature:''
+          },
+          approved_by:'',
+          approved_by_position:''
         },
-        {
-          item_name: 'B5',
-          item_scope: 'Project Billboard/Sign Baord',
-          item_percent_total: '0.80',
-          item_qnty: '1.00 ls',
-          item_unit_cost: '7,999.03',
-          item_total: '7,999.03',
-        },
-      ]
+        program_of_work:{}
+      },
+      data: [],
     }
-  }
+  },
+  async mounted() {
+    await this.fetchDupas();
+    await this.initialize();
+    await this.fetchEquipments();
+    await this.fetchManPower();
+  },
+  computed: {
+    overall_total() {
+      let total = 0;
+
+      this.programs.forEach((dupa) => {
+        console.log(dupa, "test");
+        total = total + dupa.total;
+      });
+      return total.toFixed(2);
+    },
+  },
+  methods: {
+    async initialize() {
+      let project = await this.$axios.get(`projects/${this.$route.params.id}`);
+      console.log('params', project)
+      this.project = project.data;
+    },
+
+    fetchEquipments(){
+      let params = this._createParams(this.designation_equipment_settings.options);
+      params = params + this._createFilterParams(this.designation_equipment_settings.filter);
+
+      this.$axios.get(`equipment-and-capacities?${params}`).then(({ data }) => {
+        console.log(data.data, 'equipements')
+        this.equipments = data.data
+      });
+    },
+
+    fetchManPower(){
+      let params = this._createParams(this.designation_equipment_settings.options);
+      params = params + this._createFilterParams(this.designation_equipment_settings.filter);
+
+      this.$axios.get(`designation-labors?${params}`).then(({ data }) => {
+            this.manpowers = data.data
+            console.log(data.data, 'manpower')
+          });
+    },
+
+    fetchDupas() {
+      let params = this._createFilterParams(this.setting.filter);
+      console.log(params);
+
+      this.$axios.get(`dupas?${params}`).then(({ data }) => {
+        // this.dupa_tableData.items = data.data;
+        // this.dupa_tableData.total = data.total;
+        // this.dupa_tableData.selected = [];
+        console.log(data.data);
+        this.programs = data.data
+      });
+    },
+    getPercentageDecimal(dupa_total) {
+      return (dupa_total / this.project.program_of_work.total).toFixed(2);
+    },
+  },
+
 }
 </script>
+

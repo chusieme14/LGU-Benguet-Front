@@ -29,9 +29,9 @@
               hide-details="auto"
               class="mb-2"
             ></v-text-field>
-            <v-btn class="primary-btn" color="primary" width="100%">Recover password</v-btn>
-            <v-btn class="cancel-btn" width="100%">Cancel</v-btn>
-            <p class="signup">You did not request to reset your password? <strong class="csr" @click="gotoLogin">Login</strong></p>
+            <v-btn class="primary-btn" color="primary" width="100%" @click="recover">Recover password</v-btn>
+            <v-btn class="cancel-btn" width="100%" @click="$router.go(-1)">Cancel</v-btn>
+            <p class="signup">You did not request to reset your password? <strong class="csr" @click="goTo('contractor-login')">Login</strong></p>
           </v-form>
         </div>
       </div>
@@ -40,7 +40,8 @@
 </template>
 <script>
 export default {
-  layout: "login",
+  layout: "blank",
+  auth:false,
   data(){
     return{
       valid: true,
@@ -52,6 +53,16 @@ export default {
     }
   },
   methods:{
+    recover(){
+      if(!this.$refs.form.validate()) return
+
+      this.$axios.post(`forgotpassword-contractor`, this.payload).then(({data}) => {
+        localStorage.setItem('email', this.payload.email)
+        this.$router.push({ path: '/contractor/forgot-password-otp' })
+      }).catch(error => {
+          alert('invalid email')
+        });
+    },
     remember(){
       console.log(this.isremember,"dhjsdjshdjsdhj")
       if(this.isremember==1) this.isremember = 0
@@ -60,9 +71,9 @@ export default {
       this.$router.push({ path: '/contractor/register' })
     },
     login(){
-      if(!this.$refs.form.validate()) return
+
       console.log("djshdjsdh")
-      
+
     }
   }
 };
