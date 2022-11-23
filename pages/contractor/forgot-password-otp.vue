@@ -18,17 +18,29 @@
             v-model="valid"
             lazy-validation
           >
+          <label for="">Otp</label>
             <v-text-field
-              v-model="payload.email"
-              :rules="[!!payload.otp || '']"
+              v-model="payload.otp"
+              :rules="[!!payload.otp || 'Otp is required']"
               required
               outlined
               dense
               hide-details="auto"
               class="mb-2"
             ></v-text-field>
-            <v-btn class="primary-btn" color="primary" width="100%">verify and proceed</v-btn>
-            <v-btn class="cancel-btn" width="100%">Cancel</v-btn>
+            <label for="">New Password</label>
+            <v-text-field
+              v-model="payload.password"
+              :rules="[!!payload.password || 'new password is required']"
+              required
+              outlined
+              type="password"
+              dense
+              hide-details="auto"
+              class="mb-2"
+            ></v-text-field>
+            <v-btn class="primary-btn" color="primary" @click="reset" width="100%">verify and proceed</v-btn>
+            <v-btn class="cancel-btn" @click="$router.go(-1)" width="100%">Cancel</v-btn>
           </v-form>
         </div>
       </div>
@@ -37,18 +49,29 @@
 </template>
 <script>
 export default {
-  layout: "login",
+  layout: "blank",
+  auth:false,
   data(){
     return{
       valid: true,
       payload:{
-        email:'',
+        otp:'',
         password:''
       },
       isremember: false
     }
   },
   methods:{
+    reset(){
+      if(!this.$refs.form.validate()) return
+      this.$axios.post(`resetpassword-contractor`, this.payload).then(({data}) => {
+        console.log(data)
+        this.$router.push({ path: '/contractor/login' })
+
+      }).catch(error => {
+          alert('error')
+        });
+    },
     remember(){
       console.log(this.isremember,"dhjsdjshdjsdhj")
       if(this.isremember==1) this.isremember = 0
@@ -57,9 +80,8 @@ export default {
       this.$router.push({ path: '/contractor/register' })
     },
     login(){
-      if(!this.$refs.form.validate()) return
       console.log("djshdjsdh")
-      
+
     }
   }
 };

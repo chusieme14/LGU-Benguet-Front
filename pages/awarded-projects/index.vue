@@ -1,11 +1,25 @@
 <template>
-  <div class="browse-table awarded-page">
-    <section class="table-section table-wrapper">
+  <div class="browse-table">
+    <section class="table-wrapper">
       <template>
         <v-card>
+          <!-- <v-card-title>
+            projects for implementation
+            <v-spacer></v-spacer>
+            <v-text-field v-model="search" color="#EBEE00" append-icon="mdi-magnify" label="Search" single-line hide-details>
+            </v-text-field>
+            <v-spacer></v-spacer>
+            <button class="table-filter" type="">
+              <v-icon dark>
+                mdi-account
+              </v-icon>
+              Filter
+            </button>
+          </v-card-title> -->
           <custom-table
             :data="setting"
             :tableData="tableData"
+            @selectRecord="selectRecord"
             @search="search"
             @fetchPage="initialize"
             :hide="['floater-btn']"
@@ -35,6 +49,7 @@
 import customTable from '~/components/ui/custom-table.vue'
 export default {
   components: { customTable },
+  auth:false,
   data() {
     return {
       setting: {
@@ -56,6 +71,7 @@ export default {
         { text: 'FUND SOURCE', value: 'fund_source' },
         { text: 'APPROPRIATION', value: 'appropriation' },
         { text: 'TOTAL DAYS TO COMPLETE', value: 'mandays' },
+        // { text: 'CONTRACTOR', value: 'proj_contr' },
       ],
         items: [],
         options: {
@@ -80,6 +96,10 @@ export default {
         this.tableData.total = data.total;
         this.setting.loading = false;
       })
+    },
+    selectRecord(item){
+      localStorage.setItem('sub_nav', 0)
+      this.goTo('awarded-projects-id-summary' ,{id:item.id})
     }
   }
 }

@@ -12,7 +12,7 @@
 </template>
 <script>
 import projectInfo from '@/components/browse/projectInfo.vue'
-import subMenu from '@/components/browse/subMenu.vue'
+import subMenu from '@/components/awarded-projects/subMenu.vue'
 export default {
   components:{
     projectInfo,
