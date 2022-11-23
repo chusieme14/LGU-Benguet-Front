@@ -91,7 +91,7 @@ export default {
   },
   methods: {
     initialize() {
-      this.$axios.get(`projects?status=1`).then(({ data }) => {
+      this.$axios.get(`projects?status=1&contractor=${this.$auth.user.id}`).then(({ data }) => {
         this.tableData.items = data.data;
         this.tableData.total = data.total;
         this.setting.loading = false;
