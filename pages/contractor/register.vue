@@ -104,11 +104,12 @@ export default {
       if (!this.$refs.form.validate()) return
       this.$axios.post('register-contractor', this.payload)
         .then(({ data }) => {
+          this.successNotification('wait for admin to validate your account to login !')
           console.log(data, 'test')
           this.goTo('contractor-login')
         })
         .catch(error => {
-          alert('all fields are required')
+          this.errorNotification('all fields are required')
         });
     },
     remember() {
