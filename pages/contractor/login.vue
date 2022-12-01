@@ -103,7 +103,7 @@ export default {
                     this.goTo('awarded-projects')
                 }
             } catch (error) {
-              alert(error.response.data.message)
+              this.errorNotification(error.response.data.message)
                 // this.$errorNotification(error.response.data.message)
 
             }
